@@ -1,8 +1,11 @@
 import sys
 import json
 
+from orca.orca import start
+
+
 def print_help():
-    print("Usage: python3 SNN_Testing.py <model_name> [-d <dataset>] [-w <width_mult_list>] [-l <layer_number>] [-k <kernel_size>] [-s <stride>] [-p] [-dv <device>] [-lr <learning_rate>] [-b <batch_size>] [-e <epochs>] [-v | -vv | -vvv]")
+    print("Usage: python3 snn.py <model_name> [-d <dataset>] [-w <width_mult_list>] [-l <layer_number>] [-k <kernel_size>] [-s <stride>] [-p] [-dv <device>] [-lr <learning_rate>] [-b <batch_size>] [-e <epochs>] [-v | -vv | -vvv]")
     print("Arguments:")
     print("    - model_name: name of the model")
     print("    - dataset: one of the following datasets: CIFAR10, CIFAR100, MNIST (default: CIFAR10)")
@@ -122,7 +125,10 @@ def parse_params(argv):
 
     max_channels_per_layer_list = []
     channel_max = 512
-    max_channels_per_layer_list = [128, 256, 512, 512, 512, 512]
+    max_channels_per_layer_list = [128, 256, 512]
+    start_size = len(max_channels_per_layer_list)
+    for i in range(start_size,  layer_num):
+        max_channels_per_layer_list.append(channel_max)
 
     epochs = 10
     try:

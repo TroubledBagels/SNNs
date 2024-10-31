@@ -8,7 +8,7 @@ This is an implementation of the basic slimmable neural network (SNN) originally
 List of available arguments:
 - ```-d <dataset>```: Default is CIFAR10, also available are CIFAR100 and MNIST (not properly implemented yet)
 - ```-w <width_mult_list>```: Default is [0.25, 0.5, 0.75, 1.0], give in format "[x, y, z]"
-- ```-l <layer_num>```: Default is 6, (not yet implemented)
+- ```-l <layer_num>```: Default is 6, must be >= 3
 - ```-lr <learning_rate>```: Default is 0.001
 - ```-b <batch_size>```: Default is 64
 - ```-v | -vv | -vvv```: Controls level of verbosity, use none for incredibly low-level
