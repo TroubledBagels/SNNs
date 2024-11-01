@@ -1,9 +1,6 @@
 import sys
 import json
 
-from orca.orca import start
-
-
 def print_help():
     print("Usage: python3 snn.py <model_name> [-d <dataset>] [-w <width_mult_list>] [-l <layer_number>] [-k <kernel_size>] [-s <stride>] [-p] [-dv <device>] [-lr <learning_rate>] [-b <batch_size>] [-e <epochs>] [-v | -vv | -vvv]")
     print("Arguments:")
